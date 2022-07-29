@@ -19,7 +19,7 @@ def predict_class():
     st.text(img.shape)
     img=np.asarray([cv.resize(img,(100,100))])
     pred = probability_model.predict(img)
-    st.write("This dog is most likely a : ", pred)
+    st.write("This dog is most likely a : ", class_names[np.argmax(pred)])
 
 
 if st.button("Predict"):
